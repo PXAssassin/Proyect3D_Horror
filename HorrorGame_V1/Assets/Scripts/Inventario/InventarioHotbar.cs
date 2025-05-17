@@ -3,22 +3,22 @@ using System;
 
 public class InventarioHotbar : MonoBehaviour
 {
-    public static InventarioHotbar Instancia; //para permitir acceder al inventario desde cualquier script
-    public int tamaño = 6; //tamaño del hotbar
-    public InventarioItemSlot[] slots; //array donde se guarda el contenido dde cada slot de itemData + sucantidad
-    public int indiceSeleccionado = 0; //cual slost es el que esta activo
+    public static InventarioHotbar Instancia; 
+    public int tamaño = 6; 
+
+    public InventarioItemSlot[] slots; //Varible de arreglos unidimensional
+
+    public int indiceSeleccionado = 0; 
     [Header("Referencia al sistema de item en mano")]
     public ItemEnManoController itemEnManoController;
-
-
-    public Transform puntoDrop; //punto donde se dropeara el item que tenemos en el inventario
-    public event Action OnCambioInventario; //evento que se dispara cuando algo cambia en la hotbar
+    public Transform puntoDrop; 
+    public event Action OnCambioInventario; 
 
     private void Awake()
     {
         Instancia = this;
-        slots = new InventarioItemSlot[tamaño]; //asignacion del tamaño definido anteriormente
-        for (int i = 0; i < tamaño; i++) // llenar el array con instancias vacia, para evitar errores
+        slots = new InventarioItemSlot[tamaño]; 
+        for (int i = 0; i < tamaño; i++) 
             slots[i] = new InventarioItemSlot();
     }
     private void Start()
@@ -34,10 +34,16 @@ public class InventarioHotbar : MonoBehaviour
 
     void ManejarScrollMouse()
     {
-        float scroll = Input.GetAxis("Mouse ScrollWheel");//captura la rueda del mouse
-        //condicion para saber a que direccion cambiar 
-        if (scroll > 0f) CambiarSeleccion(1);// si es mayor hacia la derecha
-        else if (scroll < 0f) CambiarSeleccion(-1); // si es menor hacia la izquierda
+        float scroll = Input.GetAxis("Mouse ScrollWheel");
+        if (scroll > 0f) CambiarSeleccion(1);
+        else if (scroll < 0f) CambiarSeleccion(-1); 
+    }
+
+    public void CambiarSeleccion(int direccion)
+    {
+        indiceSeleccionado = (indiceSeleccionado + direccion + slots.Length) % slots.Length;
+        OnCambioInventario?.Invoke();
+        ActualizarItemEnMano();
     }
 
     void ManejarDropearItem()
@@ -83,13 +89,6 @@ public class InventarioHotbar : MonoBehaviour
             }
         }
         return false;
-    }
-
-    public void CambiarSeleccion(int direccion)
-    {
-        indiceSeleccionado = (indiceSeleccionado + direccion + slots.Length) % slots.Length; //calculo para saber a que item apuntar
-        OnCambioInventario?.Invoke();
-        ActualizarItemEnMano();
     }
 
     public void IntercambiarItems(int index1, int index2)

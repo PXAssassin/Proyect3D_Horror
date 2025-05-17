@@ -412,10 +412,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5f51772883dc6b546a5f261936d5e30a,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 6523429118775780120}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5f51772883dc6b546a5f261936d5e30a,
-        type: 3}
-      insertIndex: -1
       addedObject: {fileID: 6845398357085040835}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5f51772883dc6b546a5f261936d5e30a,
         type: 3}
@@ -425,6 +421,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 5459430642633991213}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 5f51772883dc6b546a5f261936d5e30a,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 8283493809522151805}
   m_SourcePrefab: {fileID: 100100000, guid: 5f51772883dc6b546a5f261936d5e30a, type: 3}
 --- !u!1 &3799118232245890769 stripped
 GameObject:
@@ -458,26 +458,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.85, z: 0}
---- !u!114 &6523429118775780120
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3799118232245890769}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c3bfa554428e92e4fbc3b917ecc804bc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  movementSpeed: 2
-  mouseSensitivity: 2
-  verticalRotationLimit: 50
-  jumpForce: 8
-  gravity: 20
-  cameraTransform: {fileID: 5531912064681126693}
-  acceleration: 5
-  deceleration: 8
 --- !u!114 &6845398357085040835
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -517,6 +497,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 7571344405659151889}
+--- !u!114 &8283493809522151805
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3799118232245890769}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2afddc590da21964d97cb62e82e32d4e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 2
+  mouseSensitivity: 2
+  verticalRotationLimit: 90
+  jumpForce: 8
+  gravity: 20
+  cameraTransform: {fileID: 5531912064681126693}
 --- !u!4 &3838665887035091461 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8269195505564239483, guid: 5f51772883dc6b546a5f261936d5e30a,

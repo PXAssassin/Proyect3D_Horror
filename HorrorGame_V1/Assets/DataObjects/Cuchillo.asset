@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5cd51e2c1b8e7544ae693e7df7b6823, type: 3}
+  m_Name: Cuchillo
+  m_EditorClassIdentifier: 
+  id: cuchillo_01
+  nombreItem: Cuchillo
+  icono: {fileID: 21300000, guid: db3e8875f0ffb084790dad4680c3b2b4, type: 3}
+  prefab: {fileID: 115572, guid: 0d72c17103b886f4ebd560637450ecc3, type: 3}
+  maximoItem: 1
+  esArma: 1
+  "da\xF1o": 30
+  nombreAnimacionAtaque: AtacarConCuchillo

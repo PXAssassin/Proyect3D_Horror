@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1631984533544786435
+--- !u!1 &5964734700578597692
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,44 +8,40 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3632847374772164622}
-  - component: {fileID: 511522983002166981}
+  - component: {fileID: 8544681885130031842}
+  - component: {fileID: 4914291835825567442}
   m_Layer: 0
-  m_Name: ----InventarioManager----
+  m_Name: -----GameController-----
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3632847374772164622
+--- !u!4 &8544681885130031842
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631984533544786435}
+  m_GameObject: {fileID: 5964734700578597692}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.017, z: 0.16}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 379.39233, y: 86.764725, z: 2.149963}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &511522983002166981
+--- !u!114 &4914291835825567442
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631984533544786435}
+  m_GameObject: {fileID: 5964734700578597692}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4219a48c33c16a408c24a1d9ebdba7b, type: 3}
+  m_Script: {fileID: 11500000, guid: d3c3ec3f09bfbd041a41fa534cccd0be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  "tama\xF1o": 6
-  slots: []
-  indiceSeleccionado: 0
-  itemEnManoController: {fileID: 0}
-  puntoDrop: {fileID: 0}
+  txtPuntos: {fileID: 0}

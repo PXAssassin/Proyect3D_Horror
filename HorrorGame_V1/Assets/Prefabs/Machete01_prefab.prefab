@@ -11,12 +11,14 @@ GameObject:
   - component: {fileID: 476692}
   - component: {fileID: 3393746}
   - component: {fileID: 2347250}
-  - component: {fileID: 4029148010623911541}
+  - component: {fileID: 8252657550819648273}
+  - component: {fileID: 6068042582998961179}
   - component: {fileID: 5309870821277721091}
   - component: {fileID: 4950214908265308016}
+  - component: {fileID: 2127324826993864059}
   m_Layer: 6
   m_Name: Machete01_prefab
-  m_TagString: ObjetoInteractivo
+  m_TagString: ArmaJugador
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,8 +35,7 @@ Transform:
   m_LocalPosition: {x: -0.363, y: -0.197, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1563115958001617479}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &3393746
@@ -87,8 +88,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &4029148010623911541
-BoxCollider:
+--- !u!64 &8252657550819648273
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -102,12 +103,40 @@ BoxCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.7861166, y: 0.15462695, z: 0.043785412}
-  m_Center: {x: 0.17617452, y: 0.0080387, z: 0}
+  serializedVersion: 5
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 841e62620ce5486439ef62580487650d, type: 3}
+--- !u!54 &6068042582998961179
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115572}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
 --- !u!114 &5309870821277721091
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -133,56 +162,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2bed40a957ef2045a2378e33969c7fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &7903543634552034313
-GameObject:
+--- !u!114 &2127324826993864059
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1563115958001617479}
-  - component: {fileID: 8650355149173017183}
-  m_Layer: 7
-  m_Name: Hitbox
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1563115958001617479
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7903543634552034313}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 476692}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8650355149173017183
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7903543634552034313}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
+  m_GameObject: {fileID: 115572}
   m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.7676879, y: 0.1284697, z: 0.063503385}
-  m_Center: {x: 0.17424041, y: 0.0046280622, z: 0.0016011}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eddcecbcadc9198478171eaae82492f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

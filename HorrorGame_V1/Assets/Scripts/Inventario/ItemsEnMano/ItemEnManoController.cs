@@ -15,9 +15,19 @@ public class ItemEnManoController : MonoBehaviour
             itemActualEnMano.transform.localPosition = Vector3.zero;
             itemActualEnMano.transform.localRotation = Quaternion.identity;
 
-            // Desactivar el sistema de recolección cuando está equipado
+            // Desactivar físicas si el objeto tiene el script de control
+            var fisicas = itemActualEnMano.GetComponent<ItemFisicas>();
+            if (fisicas != null)
+            {
+                fisicas.ActivarModoEnMano();
+            }
+
+            // Desactivar recolección si aplica
             var hitbox = itemActualEnMano.GetComponent<CuchilloHitbox>();
-            if (hitbox != null) hitbox.DesactivarInteraccion();
+            if (hitbox != null)
+            {
+                hitbox.DesactivarInteraccion();
+            }
         }
     }
 

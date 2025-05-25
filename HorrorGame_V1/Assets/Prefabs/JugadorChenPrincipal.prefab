@@ -32,55 +32,6 @@ Transform:
   - {fileID: 5531912064681126693}
   m_Father: {fileID: 4608023870774555755}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &3739239969003423104
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1669706027932272525}
-  - component: {fileID: 2474939963736639814}
-  m_Layer: 0
-  m_Name: ----InventarioManager----
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1669706027932272525
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3739239969003423104}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.017, z: 0.16}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 4608023870774555755}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2474939963736639814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3739239969003423104}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4219a48c33c16a408c24a1d9ebdba7b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  "tama\xF1o": 6
-  slots: []
-  indiceSeleccionado: 0
-  itemEnManoController: {fileID: 6845398357085040835}
-  puntoDrop: {fileID: 5875561831285792499}
 --- !u!1 &6954497292419303071
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,11 +341,7 @@ PrefabInstance:
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5f51772883dc6b546a5f261936d5e30a,
         type: 3}
-      insertIndex: 0
-      addedObject: {fileID: 1669706027932272525}
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 5f51772883dc6b546a5f261936d5e30a,
-        type: 3}
-      insertIndex: 8
+      insertIndex: 7
       addedObject: {fileID: 1101655951159170149}
     - targetCorrespondingSourceObject: {fileID: -8269195505564239483, guid: 5f51772883dc6b546a5f261936d5e30a,
         type: 3}

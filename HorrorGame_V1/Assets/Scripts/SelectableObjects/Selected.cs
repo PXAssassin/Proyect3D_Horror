@@ -23,7 +23,7 @@ public class Selected : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, distancia, mask))
         {
-            if (hit.collider.CompareTag("ObjetoInteractivo"))
+            if (hit.collider.CompareTag("Recolectable"))
             {
                 textInfoMachete.SetActive(true);
 

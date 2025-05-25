@@ -16,6 +16,7 @@ public class InventarioHotbar : MonoBehaviour
 
     private void Awake()
     {
+        DontDestroyOnLoad(this.gameObject);
         Instancia = this;
         slots = new InventarioItemSlot[tamaño]; 
         for (int i = 0; i < tamaño; i++) 
@@ -53,11 +54,18 @@ public class InventarioHotbar : MonoBehaviour
             var slot = slots[indiceSeleccionado];
             if (!slot.EstaVacio)
             {
-                // Instanciar el objeto en el mundo
                 Vector3 posicionDrop = puntoDrop != null ? puntoDrop.position : transform.position + transform.forward * 1.5f;
-                Instantiate(slot.itemData.prefab, posicionDrop, Quaternion.identity);
+                GameObject objetoDrop = Instantiate(slot.itemData.prefab, posicionDrop, Quaternion.identity);
+
+                var fisicas = objetoDrop.GetComponent<ItemFisicas>();
+                if (fisicas != null)
+                {
+                    fisicas.ActivarModoFisico();
+                }
+
                 slot.cantidad--;
-                if (slot.cantidad <= 0) slot.itemData = null;
+                if (slot.cantidad <= 0)
+                    slot.itemData = null;
 
                 OnCambioInventario?.Invoke();
             }
@@ -109,7 +117,30 @@ public class InventarioHotbar : MonoBehaviour
         else
             itemEnManoController.LimpiarItemActual();
     }
-    
 
+    public bool TieneItemPorID(string id)
+    {
+        foreach (var slot in slots)
+        {
+            if (!slot.EstaVacio && slot.itemData.id == id)
+                return true;
+        }
+        return false;
+    }
 
+    public void RemoverItemPorID(string id)
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (!slots[i].EstaVacio && slots[i].itemData.id == id)
+            {
+                slots[i].cantidad--;
+                if (slots[i].cantidad <= 0)
+                    slots[i].itemData = null;
+
+                OnCambioInventario?.Invoke();
+                return;
+            }
+        }
+    }
 }

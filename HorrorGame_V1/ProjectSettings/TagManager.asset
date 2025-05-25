@@ -6,6 +6,8 @@ TagManager:
   tags:
   - ObjetoInteractivo
   - Door
+  - Player1
+  - Recolectable
   layers:
   - Default
   - TransparentFX

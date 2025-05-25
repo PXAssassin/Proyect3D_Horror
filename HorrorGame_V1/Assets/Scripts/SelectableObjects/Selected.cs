@@ -7,14 +7,14 @@ public class Selected : MonoBehaviour
     LayerMask mask;
     public float distancia = 15f;
     public Texture2D puntero;
-    public GameObject textInfoMachete;
-    public GameObject textInforDoor;
+    //public GameObject textInfoMachete;
+    //public GameObject textInforDoor;
 
     void Start()
     {
         mask = LayerMask.GetMask("Raycast Detected"); // Asegúrate de tener este layer en Unity y asignado a los objetos interactivos
-        textInfoMachete.SetActive(false);
-        textInfoMachete.SetActive(false);
+        //textInfoMachete.SetActive(false);
+        //textInfoMachete.SetActive(false);
     }
 
     void Update()
@@ -23,9 +23,9 @@ public class Selected : MonoBehaviour
 
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, distancia, mask))
         {
-            if (hit.collider.CompareTag("Recolectable"))
+            if (hit.collider.CompareTag("ArmaJugador"))
             {
-                textInfoMachete.SetActive(true);
+                //textInfoMachete.SetActive(true);
 
                 if (Input.GetKeyDown(KeyCode.E))
                 {
@@ -48,7 +48,7 @@ public class Selected : MonoBehaviour
             }
             if (hit.collider.CompareTag("Door"))
             {
-                textInforDoor.SetActive(true);
+                //textInforDoor.SetActive(true);
                 if (Input.GetKeyDown(KeyCode.E))
                 {
                     hit.collider.transform.GetComponent<DoorS>().ChangeDoorOnState();
@@ -59,8 +59,8 @@ public class Selected : MonoBehaviour
         }
         else
         {
-            textInfoMachete.SetActive(false);
-            textInforDoor.SetActive(false);
+            //textInfoMachete.SetActive(false);
+            //textInforDoor.SetActive(false);
         }
 
     }

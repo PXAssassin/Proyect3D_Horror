@@ -18,5 +18,5 @@ MonoBehaviour:
   prefab: {fileID: 115572, guid: 0d72c17103b886f4ebd560637450ecc3, type: 3}
   maximoItem: 1
   esArma: 1
-  "da\xF1o": 30
+  "da\xF1o": 3
   nombreAnimacionAtaque: AtacarConCuchillo

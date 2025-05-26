@@ -20,10 +20,5 @@ public class GameController : MonoBehaviour
     void Update()
     {
 
-        ShowScore(); // Actualizar el puntaje en cada frame
-    }
-    public void ShowScore()
-    {
-        txtPuntos.text = GameManager.Instance.Score.ToString(); // Actualizar el texto con el puntaje actual
     }
 }

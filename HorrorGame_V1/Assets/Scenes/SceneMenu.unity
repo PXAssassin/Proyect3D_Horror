@@ -798,11 +798,11 @@ Transform:
   m_GameObject: {fileID: 522935945}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -481.584, y: -149.59306, z: -1.9883544}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 790950649}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &541200255
 GameObject:
@@ -1551,13 +1551,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 790950648}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 481.584, y: 149.59306, z: 1.9883544}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 808932652}
-  - {fileID: 522935948}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &802735802
@@ -1708,7 +1707,7 @@ GameObject:
   - component: {fileID: 808932649}
   - component: {fileID: 808932653}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: C_Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4277,6 +4276,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6628228bfb87a04f914f19f36862d0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  vidaMaxima: 100
+  vidaActual: 100
+  textoVida: {fileID: 0}
 --- !u!4 &2100906001
 Transform:
   m_ObjectHideFlags: 0
@@ -4432,4 +4434,5 @@ SceneRoots:
   - {fileID: 221081898}
   - {fileID: 1591164679}
   - {fileID: 790950649}
+  - {fileID: 522935948}
   - {fileID: 2100906001}

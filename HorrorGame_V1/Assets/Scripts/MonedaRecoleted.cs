@@ -15,13 +15,4 @@ public class MonedaRecoleted : MonoBehaviour
     {
 
     }
-
-    private void OnTriggerEnter(Collider collision)//
-    {
-        if (collision.CompareTag("Player1")) // Cambiar a 2D
-        {
-            GameManager.Instance.sumValues(1); // Sumar 1 al puntaje
-            Destroy(gameObject); // Destruir el objeto recolectado
-        }
-    }
 }

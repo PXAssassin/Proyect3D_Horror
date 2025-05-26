@@ -5,9 +5,11 @@ using UnityEngine.SceneManagement; // Importar el espacio de nombres para la ges
 
 public class OpcionesMenu : MonoBehaviour
 {
-    public void IniciarJuego(string Nombrenivel ) // Metodo para iniciar el juego
-    { 
+
+    public void IniciarJuego(string Nombrenivel) // Metodo para iniciar el juego
+    {
         SceneManager.LoadScene(Nombrenivel); // Cargar la escena del juego
+
     }
     public void Salir()
     {

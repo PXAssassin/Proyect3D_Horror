@@ -13,5 +13,10 @@ public class InventarioItemData : ScriptableObject
     public bool esArma = false;          // Si es un arma que puede atacar
     public int daño = 0;                 // Daño que puede causar
     public string nombreAnimacionAtaque; // Nombre de la animación para atacar (ej: "AtacarCuchillo")
+   
+    [Header("Características de curación")]
+    public bool esCurativo = false;
+    public int cantidadCura = 0;
 }
+
 

@@ -68,6 +68,6 @@ public class GameManager : MonoBehaviour
 
     private void VolverAlMenu()
     {
-        SceneManager.LoadScene("Menu"); // Asegúrate que el nombre coincida con tu escena real
+        SceneManager.LoadScene("SceneMenu"); // Asegúrate que el nombre coincida con tu escena real
     }
 }

@@ -10,6 +10,7 @@ TagManager:
   - Recolectable
   - ArmaJugador
   - DropPoint
+  - Ataque
   layers:
   - Default
   - TransparentFX

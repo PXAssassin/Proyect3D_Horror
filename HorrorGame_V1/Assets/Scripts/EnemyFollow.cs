@@ -8,7 +8,7 @@ public class EnemyFollow : MonoBehaviour
     public int vidaMaxima = 3;
 
     private int vidaActual;
-    private Transform player;
+    public Transform player;
     private Animator animator;
 
     void Start()

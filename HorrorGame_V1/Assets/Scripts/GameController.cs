@@ -17,13 +17,13 @@ public class GameController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
+   // void Update()
+   // {
 
-        ShowScore(); // Actualizar el puntaje en cada frame
+        //ShowScore(); // Actualizar el puntaje en cada frame
     }
-    public void ShowScore()
-    {
-        txtPuntos.text = GameManager.Instance.Score.ToString(); // Actualizar el texto con el puntaje actual
-    }
-}
+   // public void ShowScore()
+    //{
+       // txtPuntos.text = GameManager.Instance.Score.ToString(); // Actualizar el texto con el puntaje actual
+    //}
+//}

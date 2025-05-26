@@ -16,10 +16,19 @@ public class InventarioHotbar : MonoBehaviour
 
     private void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
-        Instancia = this;
-        slots = new InventarioItemSlot[tamaño]; 
-        for (int i = 0; i < tamaño; i++) 
+        if (Instancia == null)
+        {
+            Instancia = this;
+            DontDestroyOnLoad(transform.root.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+
+        slots = new InventarioItemSlot[tamaño];
+        for (int i = 0; i < tamaño; i++)
             slots[i] = new InventarioItemSlot();
     }
     private void Start()
@@ -141,6 +150,26 @@ public class InventarioHotbar : MonoBehaviour
                 OnCambioInventario?.Invoke();
                 return;
             }
+        }
+    }
+
+    public void ReasignarReferenciasEnEscena()
+    {
+        GameObject player = GameObject.FindGameObjectWithTag("Player1");
+
+        if (player != null)
+        {
+            itemEnManoController = player.GetComponent<ItemEnManoController>();
+
+            Transform nuevoDrop = GameObject.FindGameObjectWithTag("DropPoint")?.transform;
+            if (nuevoDrop != null)
+            {
+                puntoDrop = nuevoDrop;
+            }
+        }
+        else
+        {
+            Debug.LogWarning("Jugador no encontrado en la escena para vincular el inventario.");
         }
     }
 

@@ -1,47 +1,73 @@
-using System.Collections;
-using System.Collections.Generic;
-using JetBrains.Annotations;
 using UnityEngine;
+using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    public static GameManager Instance;// instancia del game manager
-    private int score = 0;
+    public static GameManager Instance;
 
-    public int Score { get => score; set => score = value; }// propiedad para acceder al score desde otras clases
+    [Header("Vida del Jugador")]
+    public int vidaMaxima = 100;
+    public int vidaActual = 100;
+
+    [Header("UI de Vida")]
+    public TMP_Text textoVida; // Referencia al TMP_Text dentro de txtVida
 
     private void Awake()
     {
-        if (Instance == null)// comprueba si no existe una instancia del game manager
+        if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);// instacia para que presista el game manager
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
-            Destroy(gameObject);// si ya existe una instancia, destruye la nueva
+            Destroy(gameObject);
+            return;
         }
     }
-    // Start is called before the first frame update
-    void Start()
 
+    private void Start()
     {
-
+        vidaActual = vidaMaxima;
+        ActualizarTextoVida();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void RecibirDaño(int cantidad)
     {
+        vidaActual -= cantidad;
+        vidaActual = Mathf.Clamp(vidaActual, 0, vidaMaxima);
+        ActualizarTextoVida();
 
+        if (vidaActual <= 0)
+        {
+            VolverAlMenu();
+        }
     }
 
-    public void sumValues(int cont)//suma el score
+    public void RecuperarVida(int cantidad)
     {
-        score += cont;
+        vidaActual += cantidad;
+        vidaActual = Mathf.Clamp(vidaActual, 0, vidaMaxima);
+        ActualizarTextoVida();
     }
 
-    public void resetScore()//resetear el score
+    public void AsignarTextoVida(TMP_Text nuevoTexto)
     {
-        score = 0;
+        textoVida = nuevoTexto;
+        ActualizarTextoVida();
+    }
+
+    private void ActualizarTextoVida()
+    {
+        if (textoVida != null)
+        {
+            textoVida.text = $"Vida: {vidaActual}%";
+        }
+    }
+
+    private void VolverAlMenu()
+    {
+        SceneManager.LoadScene("Menu"); // Asegúrate que el nombre coincida con tu escena real
     }
 }

@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 2127324826993864059}
   m_Layer: 6
   m_Name: Machete01_prefab
-  m_TagString: ArmaJugador
+  m_TagString: Recolectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

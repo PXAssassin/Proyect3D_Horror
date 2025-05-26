@@ -9,6 +9,7 @@ TagManager:
   - Player1
   - Recolectable
   - ArmaJugador
+  - DropPoint
   layers:
   - Default
   - TransparentFX

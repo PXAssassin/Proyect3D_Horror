@@ -4,16 +4,16 @@ using UnityEngine.SceneManagement;
 public class DoorChangeEscene : MonoBehaviour
 {
     [Tooltip("ID del objeto requerido en mano")]
-    public string idLlaveRequerida = "llaveEscenario1";
+    public string idLlaveRequerida = "";
 
     [Tooltip("Nombre exacto de la escena a cargar")]
-    public string nombreEscenaDestino = "Escena2";
+    public string nombreEscenaDestino = " ";
 
     private bool jugadorCerca = false;
 
     void Update()
     {
-        if (jugadorCerca && (Input.GetKeyDown(KeyCode.E) || Input.GetKeyDown(KeyCode.F)))
+        if (jugadorCerca && (Input.GetKeyDown(KeyCode.F)))
         {
             var slot = InventarioHotbar.Instancia.slots[InventarioHotbar.Instancia.indiceSeleccionado];
             if (!slot.EstaVacio && slot.itemData.id == idLlaveRequerida)
@@ -26,11 +26,11 @@ public class DoorChangeEscene : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player")) jugadorCerca = true;
+        if (other.CompareTag("Player1")) jugadorCerca = true;
     }
 
     void OnTriggerExit(Collider other)
     {
-        if (other.CompareTag("Player")) jugadorCerca = false;
+        if (other.CompareTag("Player1")) jugadorCerca = false;
     }
 }

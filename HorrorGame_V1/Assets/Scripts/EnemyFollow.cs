@@ -5,11 +5,13 @@ public class EnemyFollow : MonoBehaviour
     public float speed = 2.0f;
     public float rotationSpeed = 5.0f;
     public float attackRange = 2.0f;
+    public float activationRange = 10.0f; // Distancia para que se active el enemigo
     public int vidaMaxima = 3;
 
     private int vidaActual;
     public Transform player;
     private Animator animator;
+    private bool isActive = false; // Indica si el enemigo ya se activó
 
     void Start()
     {
@@ -21,6 +23,9 @@ public class EnemyFollow : MonoBehaviour
 
         animator = GetComponent<Animator>();
         vidaActual = vidaMaxima;
+
+        // Ya no hace falta setear nada para el Idle,
+        // pues el Animator debe iniciar en ese estado por defecto.
     }
 
     void Update()
@@ -28,6 +33,17 @@ public class EnemyFollow : MonoBehaviour
         if (player == null) return;
 
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+        if (!isActive)
+        {
+            if (distanceToPlayer <= activationRange)
+            {
+                isActive = true;
+                // No es necesario cambiar parámetros aquí
+                // El enemigo pasará de Idle a movimiento o ataque según la lógica siguiente
+            }
+            else return; // Mientras no se active, no hace nada
+        }
 
         if (distanceToPlayer <= attackRange)
         {
@@ -49,7 +65,6 @@ public class EnemyFollow : MonoBehaviour
 
         if (vidaActual <= 0)
         {
-            // Aquí puedes poner animación de muerte si deseas
             Destroy(gameObject);
         }
     }

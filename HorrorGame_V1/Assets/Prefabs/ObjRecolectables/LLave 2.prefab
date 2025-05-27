@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 2585576674053160427}
   - component: {fileID: 3894227150925979070}
   m_Layer: 6
-  m_Name: LLave
+  m_Name: LLave 2
   m_TagString: Llave
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,7 +179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d2cefa83a57d3246b632717786738f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  datosItem: {fileID: 11400000, guid: c180269feeaa5354e8140abc001487d0, type: 2}
+  datosItem: {fileID: 11400000, guid: a4ab6c2fc804aee4d8352c1833670049, type: 2}
 --- !u!114 &3894227150925979070
 MonoBehaviour:
   m_ObjectHideFlags: 0

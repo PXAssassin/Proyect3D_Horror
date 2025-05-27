@@ -1408,6 +1408,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemigo  1 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 5381764232340862271, guid: 808983bbbeaa1c346bcb8dc29579b9db,
+        type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 2142875172}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1491,6 +1496,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b10351089394c84f8e94b0f36d44a89, type: 3}
+--- !u!4 &2142875172 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4608023870774555755, guid: 5b10351089394c84f8e94b0f36d44a89,
+    type: 3}
+  m_PrefabInstance: {fileID: 2142875171}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8410426992379504460
 PrefabInstance:
   m_ObjectHideFlags: 0

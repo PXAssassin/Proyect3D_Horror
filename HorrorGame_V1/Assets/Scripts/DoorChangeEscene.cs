@@ -1,8 +1,11 @@
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class DoorChangeEscene : MonoBehaviour
 {
+   
+
     [Tooltip("ID del objeto requerido en mano")]
     public string idLlaveRequerida = "";
 
@@ -10,9 +13,10 @@ public class DoorChangeEscene : MonoBehaviour
     public string nombreEscenaDestino = " ";
 
     private bool jugadorCerca = false;
-
+   
     void Update()
     {
+
         if (jugadorCerca && (Input.GetKeyDown(KeyCode.F)))
         {
             var slot = InventarioHotbar.Instancia.slots[InventarioHotbar.Instancia.indiceSeleccionado];
@@ -21,6 +25,7 @@ public class DoorChangeEscene : MonoBehaviour
                 InventarioHotbar.Instancia.RemoverItemPorID(idLlaveRequerida);
                 SceneManager.LoadScene(nombreEscenaDestino);
             }
+            
         }
     }
 

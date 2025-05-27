@@ -7,13 +7,13 @@ using TMPro;
 public class Selected : MonoBehaviour
 {
     [System.Serializable]
-    public struct MensajePorTag
+    public struct MensajePorTag //Estruc tura Objeto que nos seriva para crear una lista
     {
         public string tag;
         public string mensaje;
     }
 
-    public List<MensajePorTag> mensajesInteractivos;
+    public List<MensajePorTag> mensajesInteractivos; //aqui pondremos los objetos creados
     public float distancia = 15f;
     public Texture2D puntero;
     public LayerMask mask;

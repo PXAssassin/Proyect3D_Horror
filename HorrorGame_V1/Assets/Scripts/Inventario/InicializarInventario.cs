@@ -15,4 +15,5 @@ public class InicializadorInventario : MonoBehaviour
             instanciado = true;
         }
     }
+
 }

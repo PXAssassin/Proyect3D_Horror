@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 49227857668260988}
   m_Layer: 6
   m_Name: Botiquin
-  m_TagString: Recolectable
+  m_TagString: Botiquin
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

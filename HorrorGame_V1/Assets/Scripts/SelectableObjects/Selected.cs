@@ -1,73 +1,89 @@
+// Script: Selected.cs (versión con referencia directa desde el inspector a textoInteraccion)
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Selected : MonoBehaviour
 {
-    LayerMask mask;
+    [System.Serializable]
+    public struct MensajePorTag
+    {
+        public string tag;
+        public string mensaje;
+    }
+
+    public List<MensajePorTag> mensajesInteractivos;
     public float distancia = 15f;
     public Texture2D puntero;
-    //public GameObject textInfoMachete;
-    //public GameObject textInforDoor;
+    public LayerMask mask;
+    public TMP_Text textoUI; // Referencia directa desde el Inspector
 
     void Start()
     {
-        mask = LayerMask.GetMask("Raycast Detected"); // Asegúrate de tener este layer en Unity y asignado a los objetos interactivos
-        //textInfoMachete.SetActive(false);
-        //textInfoMachete.SetActive(false);
+        mask = LayerMask.GetMask("Raycast Detected");
+        if (textoUI != null)
+        {
+            textoUI.gameObject.SetActive(false);
+        }
     }
 
     void Update()
     {
-        RaycastHit hit;
+        if (textoUI != null) textoUI.gameObject.SetActive(false);
 
+        RaycastHit hit;
         if (Physics.Raycast(transform.position, transform.TransformDirection(Vector3.forward), out hit, distancia, mask))
         {
-            if (hit.collider.CompareTag("Recolectable"))
-            {
-                //textInfoMachete.SetActive(true);
+            string tagDetectado = hit.collider.tag;
+            string mensaje = ObtenerMensajePorTag(tagDetectado);
 
-                if (Input.GetKeyDown(KeyCode.E))
+            if (!string.IsNullOrEmpty(mensaje) && textoUI != null)
+            {
+                textoUI.text = mensaje;
+                textoUI.gameObject.SetActive(true);
+            }
+
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                if (tagDetectado == "Door")
                 {
-                    
-                    ObjetoRecolectable recolectable = hit.collider.GetComponent<ObjetoRecolectable>();
+                    hit.collider.transform.GetComponent<DoorS>()?.ChangeDoorOnState();
+                }
+                else
+                {
+                    var recolectable = hit.collider.GetComponent<ObjetoRecolectable>();
                     if (recolectable != null)
                     {
                         bool fueAgregado = InventarioHotbar.Instancia.AgregarItem(recolectable.datosItem);
                         if (fueAgregado)
                         {
                             Destroy(recolectable.gameObject);
-                            Debug.Log("Objeto recogido: " + recolectable.datosItem.nombreItem);
-                        }
-                        else
-                        {
-                            Debug.Log("Inventario LLenos");
                         }
                     }
-                }
-            }
-            if (hit.collider.CompareTag("Door"))
-            {
-                //textInforDoor.SetActive(true);
-                if (Input.GetKeyDown(KeyCode.E))
-                {
-                    hit.collider.transform.GetComponent<DoorS>().ChangeDoorOnState();
                 }
             }
 
             Debug.DrawRay(transform.position, transform.TransformDirection(Vector3.forward) * distancia, Color.red);
         }
-        else
-        {
-            //textInfoMachete.SetActive(false);
-            //textInforDoor.SetActive(false);
-        }
+    }
 
+    string ObtenerMensajePorTag(string tag)
+    {
+        foreach (var mensaje in mensajesInteractivos)
+        {
+            if (mensaje.tag == tag)
+                return mensaje.mensaje;
+        }
+        return "";
     }
 
     private void OnGUI()
     {
-        Rect rect = new Rect(Screen.width / 2, Screen.height / 2, puntero.width, puntero.height);
-        GUI.DrawTexture(rect, puntero);
+        if (puntero != null)
+        {
+            Rect rect = new Rect(Screen.width / 2, Screen.height / 2, puntero.width, puntero.height);
+            GUI.DrawTexture(rect, puntero);
+        }
     }
 }

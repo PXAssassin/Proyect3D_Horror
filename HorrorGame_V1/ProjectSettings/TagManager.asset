@@ -11,6 +11,9 @@ TagManager:
   - ArmaJugador
   - DropPoint
   - Ataque
+  - Botiquin
+  - Llave
+  - DoorEscene
   layers:
   - Default
   - TransparentFX

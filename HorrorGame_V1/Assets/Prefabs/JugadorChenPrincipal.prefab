@@ -213,8 +213,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 904df6fe2bfa8574995033be94f3a40a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mensajesInteractivos:
+  - tag: ArmaJugador
+    mensaje: E take machete
+  - tag: Llave
+    mensaje: E take llave
+  - tag: Botiquin
+    mensaje: E take botiquin
+  - tag: Door
+    mensaje: E open Door
+  - tag: DoorEscene
+    mensaje: F Open Door
   distancia: 30
   puntero: {fileID: 2800000, guid: 6414f21d7fd83b944893551bb97ff288, type: 3}
+  mask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  textoUI: {fileID: 0}
 --- !u!1 &8928659357120572669
 GameObject:
   m_ObjectHideFlags: 0

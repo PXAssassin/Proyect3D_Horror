@@ -578,6 +578,59 @@ Transform:
   - {fileID: 8422844540624714813}
   m_Father: {fileID: 1052580978054649063}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2123485739082225249
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5160886646789218075}
+  - component: {fileID: 6382931636865868868}
+  m_Layer: 0
+  m_Name: "DA\xD1OHITBOX"
+  m_TagString: Ataque
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5160886646789218075
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123485739082225249}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.2386541, y: -0.056023188, z: -0.32996562, w: 0.91160756}
+  m_LocalPosition: {x: 0.0476, y: -0.0756, z: -0.0234}
+  m_LocalScale: {x: 1, y: 2.6959, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4689313988541446406}
+  m_LocalEulerAnglesHint: {x: -28.17, y: 3.6, z: -40.7}
+--- !u!65 &6382931636865868868
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2123485739082225249}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.05, y: 0.05, z: 0.05}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2290627443752735243
 GameObject:
   m_ObjectHideFlags: 0
@@ -1061,7 +1114,7 @@ CapsuleCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1084,6 +1137,7 @@ MonoBehaviour:
   speed: 2
   rotationSpeed: 5
   attackRange: 2
+  vidaMaxima: 3
 --- !u!82 &3505090887317444402
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1699,7 +1753,8 @@ Transform:
   m_LocalPosition: {x: 0.002427104, y: 0.024946377, z: 6.382984e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 5160886646789218075}
   m_Father: {fileID: 6315508048564690560}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6771942780654381715

@@ -223,7 +223,7 @@ MonoBehaviour:
   - tag: Door
     mensaje: E open Door
   - tag: DoorEscene
-    mensaje: F Open Door
+    mensaje: F Open Door(Need Key)
   distancia: 30
   puntero: {fileID: 2800000, guid: 6414f21d7fd83b944893551bb97ff288, type: 3}
   mask:

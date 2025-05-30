@@ -19000,7 +19000,7 @@ PrefabInstance:
         type: 3}
       propertyPath: puntosDeSpawn.Array.data[6]
       value: 
-      objectReference: {fileID: 1271480985}
+      objectReference: {fileID: 0}
     - target: {fileID: 8399911888026984363, guid: 982ded510fd09ca4c9f8d1ef648dea0d,
         type: 3}
       propertyPath: puntosDeSpawn.Array.data[7]
@@ -19017,10 +19017,6 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 43880758}
-    - targetCorrespondingSourceObject: {fileID: 5460860550321823214, guid: 982ded510fd09ca4c9f8d1ef648dea0d,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1271480985}
     - targetCorrespondingSourceObject: {fileID: 5460860550321823214, guid: 982ded510fd09ca4c9f8d1ef648dea0d,
         type: 3}
       insertIndex: -1
@@ -22967,37 +22963,6 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -4651382311271614346, guid: efb3f1e9df15fc34d82fd632fb94d875, type: 3}
---- !u!1 &1271480984
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1271480985}
-  m_Layer: 0
-  m_Name: panw7
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1271480985
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1271480984}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.56, y: 0.7935815, z: -33.41}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 626664461}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1275293992
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,7 +11,7 @@ public class ItemFisicas : MonoBehaviour
         col = GetComponent<Collider>();
     }
 
-    // Llamado cuando el objeto es equipado
+    // Llamado cuando el objeto es equipado (en mano)
     public void ActivarModoEnMano()
     {
         if (rb != null)
@@ -22,11 +22,15 @@ public class ItemFisicas : MonoBehaviour
 
         if (col != null)
         {
-            col.isTrigger = false; // Opcional: si necesitas trigger en la mano o no
+            // Si quieres que no colisione mientras está en la mano, pon true
+            // col.isTrigger = true; 
+
+            // Si quieres que siga colisionando con el entorno, pon false
+            col.isTrigger = false;
         }
     }
 
-    // Llamado cuando el objeto se dropea
+    // Llamado cuando el objeto es soltado o droppeado en el mundo
     public void ActivarModoFisico()
     {
         if (rb != null)

@@ -1,18 +1,59 @@
 using UnityEngine;
 
+/// <summary>
+/// Script que permite a un enemigo seguir y atacar al jugador cuando este se encuentra en un rango determinado.
+/// También gestiona la vida del enemigo y su destrucción al recibir daño.
+/// </summary>
 public class EnemyFollow : MonoBehaviour
 {
+    /// <summary>
+    /// Velocidad de movimiento del enemigo.
+    /// </summary>
     public float speed = 2.0f;
+
+    /// <summary>
+    /// Velocidad con la que el enemigo rota para mirar al jugador.
+    /// </summary>
     public float rotationSpeed = 5.0f;
+
+    /// <summary>
+    /// Distancia a la que el enemigo empieza a atacar.
+    /// </summary>
     public float attackRange = 2.0f;
-    public float activationRange = 10.0f; // Distancia para que se active el enemigo
+
+    /// <summary>
+    /// Distancia a la que el enemigo se activa y comienza a moverse.
+    /// </summary>
+    public float activationRange = 10.0f;
+
+    /// <summary>
+    /// Vida máxima del enemigo.
+    /// </summary>
     public int vidaMaxima = 3;
 
+    /// <summary>
+    /// Vida actual del enemigo.
+    /// </summary>
     private int vidaActual;
-    public Transform player;
-    private Animator animator;
-    private bool isActive = false; // Indica si el enemigo ya se activó
 
+    /// <summary>
+    /// Referencia al jugador.
+    /// </summary>
+    public Transform player;
+
+    /// <summary>
+    /// Referencia al componente Animator para manejar animaciones.
+    /// </summary>
+    private Animator animator;
+
+    /// <summary>
+    /// Indica si el enemigo ha sido activado.
+    /// </summary>
+    private bool isActive = false;
+
+    /// <summary>
+    /// Inicializa referencias y valores por defecto.
+    /// </summary>
     void Start()
     {
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player1");
@@ -23,11 +64,11 @@ public class EnemyFollow : MonoBehaviour
 
         animator = GetComponent<Animator>();
         vidaActual = vidaMaxima;
-
-        // Ya no hace falta setear nada para el Idle,
-        // pues el Animator debe iniciar en ese estado por defecto.
     }
 
+    /// <summary>
+    /// Controla la activación del enemigo, su movimiento y ataque hacia el jugador.
+    /// </summary>
     void Update()
     {
         if (player == null) return;
@@ -39,10 +80,8 @@ public class EnemyFollow : MonoBehaviour
             if (distanceToPlayer <= activationRange)
             {
                 isActive = true;
-                // No es necesario cambiar parámetros aquí
-                // El enemigo pasará de Idle a movimiento o ataque según la lógica siguiente
             }
-            else return; // Mientras no se active, no hace nada
+            else return;
         }
 
         if (distanceToPlayer <= attackRange)
@@ -59,6 +98,10 @@ public class EnemyFollow : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Aplica daño al enemigo y lo destruye si su vida llega a cero.
+    /// </summary>
+    /// <param name="cantidad">Cantidad de daño a recibir.</param>
     public void RecibirDaño(int cantidad)
     {
         vidaActual -= cantidad;
@@ -69,6 +112,10 @@ public class EnemyFollow : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Detecta colisiones con armas del jugador y aplica daño si corresponde.
+    /// </summary>
+    /// <param name="other">Colisionador con el que se ha producido la colisión.</param>
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("ArmaJugador"))
